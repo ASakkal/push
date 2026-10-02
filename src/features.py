@@ -18,3 +18,22 @@ How to assess success:
 - Dropping NaNs caused by the rolling windows leaves a usable length of data.
 - Features can be inspected visually (e.g. price vs rolling mean, z-score time series) and look correct.
 """
+
+"""
+FEATURE ENGINEERING FUNCTIONS
+"""
+def engineer_features():
+    pass
+
+
+"""
+COMPUTATIONAL FUNCTIONS
+"""
+def compute_rolling_means():
+    pass
+
+def compute_rolling_sd():
+    pass
+
+def compute_z_score():
+    pass
