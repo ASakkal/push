@@ -1,5 +1,4 @@
 from pathlib import Path
-import pandas as pd
 import yfinance as yf
 
 """
@@ -39,7 +38,6 @@ if not (TARGET_DIR / SPY_file).exists():
     print(f"Raw data not found at {TARGET_DIR / SPY_file}. Downloading from Yahoo Finance...")
     # TARGET_DIR.mkdir(parents=True, exist_ok=True)
     SPY_data = yf.download(tickers=["SPY"], start="2015-01-01", keepna=True)  # Retrieve SPY data from Yahoo Finance
-    SPY_pd = pd.DataFrame(SPY_data)  # Convert to DataFrame
-    SPY_pd.to_csv(TARGET_DIR / SPY_file, index=True) # Save to CSV in relevant directory
+    SPY_data.to_csv(TARGET_DIR / SPY_file, index=True) # Save to CSV in relevant directory
 else:
     print(f"Raw data already exists at {TARGET_DIR / SPY_file}. Skipping download.")
